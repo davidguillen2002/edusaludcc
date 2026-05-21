@@ -24,6 +24,8 @@ type FormState = {
   phone: string;
   type: string;
   message: string;
+  /** Honeypot — visible only to bots via off-screen positioning. */
+  website: string;
 };
 
 const initial: FormState = {
@@ -32,6 +34,7 @@ const initial: FormState = {
   phone: "",
   type: consultationTypes[0],
   message: "",
+  website: "",
 };
 
 type Status = "idle" | "sent" | "error";
@@ -53,6 +56,7 @@ export function ContactForm() {
         phone: form.phone.trim(),
         type: form.type,
         message: form.message.trim(),
+        website: form.website, // honeypot — empty for humans
       });
       if (result.ok) {
         setStatus("sent");
@@ -126,6 +130,23 @@ export function ContactForm() {
               noValidate
               className="relative rounded-3xl border border-border bg-surface p-7 shadow-soft sm:p-9"
             >
+              {/* Honeypot — invisible to humans, attractive to naive bots. */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden opacity-0"
+              >
+                <label htmlFor="website">No completar este campo</label>
+                <input
+                  id="website"
+                  name="website"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={form.website}
+                  onChange={(e) => setForm({ ...form, website: e.target.value })}
+                />
+              </div>
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <Field
                   label="Nombre completo *"

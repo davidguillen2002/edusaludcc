@@ -1,8 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import { Lexend, Source_Sans_3 } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { SkipLink } from "@/components/ui/SkipLink";
 import "./globals.css";
 
 // Healthcare-grade typography combo (per UI/UX skill recommendation).
@@ -70,10 +74,16 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${display.variable} ${body.variable}`}>
       <body className="min-h-screen antialiased">
+        <SkipLink />
+        <ScrollProgress />
         <Navbar />
-        <main className="relative">{children}</main>
+        <main id="main" className="relative">
+          {children}
+        </main>
         <Footer />
         <FloatingWhatsApp />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
