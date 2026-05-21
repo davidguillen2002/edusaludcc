@@ -240,3 +240,61 @@ export const consultationTypes = [
   "Programas institucionales",
   "Chequeos médicos",
 ];
+
+/* ------------------------------------------------------------------ */
+/* MARQUEE — health topics ticker                                     */
+/* ------------------------------------------------------------------ */
+
+export const marqueeTopics = [
+  "Manejo del estrés",
+  "Nutrición consciente",
+  "Ergonomía laboral",
+  "Salud cardiovascular",
+  "Higiene del sueño",
+  "Bienestar emocional",
+  "Prevención de enfermedades crónicas",
+  "Actividad física",
+  "Salud mental",
+  "Detección temprana",
+  "Hábitos sostenibles",
+  "Vacunación al día",
+];
+
+/** Words rotated under the hero headline. */
+export const rotatingHeroWords = [
+  "prevención",
+  "educación",
+  "bienestar",
+  "cuidado",
+];
+
+/* ------------------------------------------------------------------ */
+/* FAQ                                                                */
+/* ------------------------------------------------------------------ */
+
+export const faqs = [
+  {
+    q: "¿Cómo personalizan los programas según mi institución?",
+    a: "Comenzamos con una evaluación inicial gratuita. Mapeamos perfiles de tu equipo, riesgos prioritarios y objetivos. Sobre eso diseñamos el contenido, formato y métricas de cada intervención.",
+  },
+  {
+    q: "¿Qué evidencia clínica respalda sus charlas y programas?",
+    a: "Trabajamos con guías de la OMS, Ministerio de Salud Pública del Ecuador y consensos clínicos vigentes. Cada material es revisado por médicos colegiados y se actualiza al menos una vez al año.",
+  },
+  {
+    q: "¿Dónde atienden? ¿Solo en Quito?",
+    a: "Nuestra base está en Quito, pero ofrecemos atención presencial en todo Pichincha y modalidad virtual o híbrida para cualquier provincia del Ecuador.",
+  },
+  {
+    q: "¿Cuánto tiempo dura un programa típico?",
+    a: "Las charlas son sesiones de 45 a 90 minutos. Los programas institucionales suelen durar entre 4 y 12 semanas, con encuentros periódicos y un informe final de impacto.",
+  },
+  {
+    q: "¿Cómo miden el impacto de un programa?",
+    a: "Antes y después del programa aplicamos encuestas de conocimiento, escalas validadas (estrés, bienestar) y, cuando aplica, indicadores clínicos. Entregamos un dashboard con resultados comparativos.",
+  },
+  {
+    q: "¿Trabajan con empresas pequeñas o solo grandes?",
+    a: "Trabajamos con organizaciones de cualquier tamaño — desde equipos de 5 personas hasta corporativos con cientos de colaboradores. Adaptamos el alcance y el presupuesto.",
+  },
+];

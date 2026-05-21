@@ -169,7 +169,12 @@
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
   }
-  .animate-marquee-x { animation: marquee-x 28s linear infinite; }
+  @keyframes marquee-x-reverse {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+  .animate-marquee-x { animation: marquee-x 38s linear infinite; }
+  .animate-marquee-x-reverse { animation: marquee-x-reverse 46s linear infinite; }
 
   @keyframes aurora {
     0%, 100% { transform: translate3d(0,0,0) rotate(0deg); }
