@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
 import { aboutImages } from "@/lib/site";
+import { shimmer } from "@/lib/blur";
+import { CountUp } from "@/components/ui/CountUp";
 
 export function AboutTrajectory() {
   return (
@@ -24,6 +26,8 @@ export function AboutTrajectory() {
                 alt={aboutImages.trajectory.alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                placeholder="blur"
+                blurDataURL={shimmer(16, 20)}
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/30 via-transparent to-transparent" />
@@ -76,9 +80,10 @@ export function AboutTrajectory() {
                   { v: "100%", l: "soluciones a medida" },
                 ].map((s) => (
                   <div key={s.l} className="bg-surface px-4 py-5">
-                    <div className="text-2xl font-semibold tracking-tight text-foreground">
-                      {s.v}
-                    </div>
+                    <CountUp
+                      value={s.v}
+                      className="block text-2xl font-semibold tracking-tight text-foreground tabular-nums"
+                    />
                     <div className="mt-1 text-[11px] uppercase tracking-wider text-muted-foreground">
                       {s.l}
                     </div>

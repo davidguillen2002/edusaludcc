@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Layers, ShieldCheck, TrendingUp } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { CountUp } from "@/components/ui/CountUp";
 import { whyChoose } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
@@ -49,9 +50,10 @@ export function WhyChoose() {
                     <Icon className="h-5 w-5" />
                   </span>
                   <div className="text-right">
-                    <div className="text-2xl font-semibold tracking-tight text-brand-700">
-                      {item.metric}
-                    </div>
+                    <CountUp
+                      value={item.metric}
+                      className="block text-2xl font-semibold tracking-tight text-brand-700 tabular-nums"
+                    />
                     <div className="text-[11px] uppercase tracking-wider text-muted-foreground">
                       {item.metricLabel}
                     </div>

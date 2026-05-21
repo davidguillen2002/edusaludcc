@@ -10,6 +10,7 @@ import {
   servicesPageImages,
   suggestedTopics,
 } from "@/lib/site";
+import { shimmer } from "@/lib/blur";
 
 export function ServicesShowcase() {
   return (
@@ -74,6 +75,8 @@ export function ServicesShowcase() {
                   alt={servicesPageImages.programs.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  placeholder="blur"
+                  blurDataURL={shimmer(16, 12)}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-brand-900/30 via-transparent to-transparent" />
@@ -105,6 +108,8 @@ export function ServicesShowcase() {
                   alt={servicesPageImages.checkups.alt}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
+                  placeholder="blur"
+                  blurDataURL={shimmer(16, 12)}
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-coral-700/30 via-transparent to-transparent" />

@@ -13,7 +13,10 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
+import { CountUp } from "@/components/ui/CountUp";
+import { MagneticButton } from "@/components/ui/MagneticButton";
 import { heroImage } from "@/lib/site";
+import { shimmer } from "@/lib/blur";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -103,10 +106,10 @@ export function Hero() {
               custom={3}
               className="mt-9 flex flex-col gap-3 sm:flex-row"
             >
-              <Button href="/#contacto" size="lg">
+              <MagneticButton href="/#contacto" size="lg">
                 Solicitar propuesta
                 <ArrowRight className="h-4 w-4" />
-              </Button>
+              </MagneticButton>
               <Button href="/servicios" variant="secondary" size="lg">
                 <PlayCircle className="h-4 w-4" />
                 Conocer servicios
@@ -146,6 +149,8 @@ export function Hero() {
                   fill
                   priority
                   sizes="(max-width: 1024px) 90vw, 40vw"
+                  placeholder="blur"
+                  blurDataURL={shimmer(16, 20)}
                   className="object-cover"
                 />
               </motion.div>
@@ -219,9 +224,10 @@ export function Hero() {
             { value: "4.9★", label: "valoración promedio" },
           ].map((s) => (
             <div key={s.label} className="bg-surface px-6 py-7 text-center">
-              <div className="text-display-lg font-semibold tracking-tight text-foreground">
-                {s.value}
-              </div>
+              <CountUp
+                value={s.value}
+                className="block text-display-lg font-semibold tracking-tight text-foreground tabular-nums"
+              />
               <div className="mt-1 text-xs uppercase tracking-wider text-muted-foreground">
                 {s.label}
               </div>

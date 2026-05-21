@@ -13,6 +13,7 @@ import {
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { services } from "@/lib/site";
+import { shimmer } from "@/lib/blur";
 import { cn } from "@/lib/cn";
 
 const iconBySlug = {
@@ -94,6 +95,8 @@ function ServiceCardLarge({
         alt={service.image.alt}
         fill
         sizes="(max-width: 768px) 100vw, 50vw"
+        placeholder="blur"
+        blurDataURL={shimmer(16, 16)}
         className="object-cover transition-transform duration-[1400ms] ease-out-quint group-hover:scale-[1.06]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent" />
