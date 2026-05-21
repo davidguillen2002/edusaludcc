@@ -214,22 +214,24 @@ function ServiceCardImage({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group relative grid grid-cols-5 overflow-hidden rounded-3xl border border-border bg-surface shadow-soft transition-all hover:-translate-y-1 hover:shadow-elevated",
+        // Stack vertically on phones (image on top), split into a
+        // 2:3 grid only from `sm:` upward where there's room for it.
+        "group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-soft transition-all hover:-translate-y-1 hover:shadow-elevated sm:grid sm:grid-cols-5",
         className
       )}
     >
       <SpotlightLayer color="hsl(var(--brand-400) / 0.25)" size={400} />
-      <div className="relative col-span-2 overflow-hidden">
+      <div className="relative h-44 overflow-hidden sm:col-span-2 sm:h-auto">
         <Image
           src={service.image.src}
           alt={service.image.alt}
           fill
-          sizes="(max-width: 768px) 40vw, 25vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 40vw, 25vw"
           className="object-cover transition-transform duration-[1200ms] ease-out-quint group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-surface/30 sm:bg-gradient-to-r sm:to-surface/60" />
       </div>
-      <div className="col-span-3 flex flex-col justify-between p-6 sm:p-7">
+      <div className="flex flex-col justify-between gap-4 p-6 sm:col-span-3 sm:p-7">
         <span className="grid h-10 w-10 place-items-center rounded-xl bg-brand-50 text-brand-700">
           <Icon className="h-5 w-5" />
         </span>

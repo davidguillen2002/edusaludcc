@@ -78,9 +78,11 @@ const config: Config = {
         display: ["var(--font-display)", "var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       fontSize: {
-        "display-2xl": ["clamp(2.75rem, 6vw, 4.75rem)", { lineHeight: "1.05", letterSpacing: "-0.03em" }],
-        "display-xl": ["clamp(2.25rem, 5vw, 3.5rem)", { lineHeight: "1.08", letterSpacing: "-0.025em" }],
-        "display-lg": ["clamp(1.75rem, 3.5vw, 2.5rem)", { lineHeight: "1.15", letterSpacing: "-0.02em" }],
+        // Tighter mobile floor so titles never overflow viewports < 380px,
+        // while keeping the same expressive maximum on desktop.
+        "display-2xl": ["clamp(2.125rem, 5.4vw, 4.75rem)", { lineHeight: "1.08", letterSpacing: "-0.03em" }],
+        "display-xl": ["clamp(1.875rem, 4.4vw, 3.5rem)", { lineHeight: "1.12", letterSpacing: "-0.025em" }],
+        "display-lg": ["clamp(1.5rem, 3.2vw, 2.5rem)", { lineHeight: "1.2", letterSpacing: "-0.02em" }],
       },
       backgroundImage: {
         "brand-gradient":

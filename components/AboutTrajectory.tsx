@@ -23,7 +23,7 @@ export function AboutTrajectory() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/5] overflow-hidden rounded-[2rem] shadow-elevated"
+              className="relative aspect-[5/4] overflow-hidden rounded-[1.5rem] shadow-elevated sm:rounded-[2rem] lg:aspect-[4/5]"
             >
               <Image
                 src={aboutImages.trajectory.src}

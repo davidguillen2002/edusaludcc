@@ -170,13 +170,16 @@ export function Hero() {
                   delay: 0.55,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="mt-2 block"
+                className="mt-1 block sm:mt-2"
               >
-                <span className="relative inline-flex items-baseline">
-                  {/* Pulsing glow behind the rotating word */}
+                {/* inline-block (not inline-flex) so the line can wrap
+                    naturally on narrow viewports and the baseline
+                    aligns with the trailing "que cuida." text. */}
+                <span className="relative inline-block align-baseline">
+                  {/* Pulsing glow — tighter on mobile to avoid overflow. */}
                   <span
                     aria-hidden
-                    className="absolute inset-y-2 -inset-x-3 -z-10 rounded-2xl bg-brand-100/70 blur-2xl"
+                    className="absolute inset-y-1 -inset-x-2 -z-10 rounded-2xl bg-brand-100/70 blur-2xl sm:inset-y-2 sm:-inset-x-3"
                   />
                   <RotatingWord
                     words={[...rotatingHeroWords]}
@@ -237,7 +240,7 @@ export function Hero() {
 
           {/* Showcase column with mouse-tilt + animated ring */}
           <div className="relative lg:col-span-5">
-            <div className="relative mx-auto aspect-[4/5] w-full max-w-md">
+            <div className="relative mx-auto aspect-[5/6] w-full max-w-md sm:aspect-[4/5]">
               {/* Animated gradient ring behind the card */}
               <AnimatedRing size={118} durationS={16} thickness={3} className="z-0" />
 
