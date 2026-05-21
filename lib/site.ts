@@ -260,12 +260,18 @@ export const marqueeTopics = [
   "Vacunación al día",
 ];
 
-/** Words rotated under the hero headline. */
+/**
+ * Words rotated in the hero headline.
+ * They MUST be feminine singular subjects that read naturally before
+ * "que cuida" — e.g. "Educación que cuida", "Empatía que cuida".
+ */
 export const rotatingHeroWords = [
-  "prevención",
-  "educación",
-  "bienestar",
-  "cuidado",
+  "Educación",
+  "Prevención",
+  "Evidencia",
+  "Empatía",
+  "Ciencia",
+  "Constancia",
 ];
 
 /* ------------------------------------------------------------------ */

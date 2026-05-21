@@ -22,7 +22,8 @@ import { cn } from "@/lib/cn";
 
 type Props = {
   children: string;
-  as?: "h1" | "h2" | "h3";
+  /** Element rendered. Use "span" when nesting inside another heading. */
+  as?: "h1" | "h2" | "h3" | "span" | "div";
   className?: string;
   delay?: number;
   staggerMs?: number;
@@ -63,7 +64,11 @@ export function AnimatedHeadline({
     },
   };
 
-  const MotionTag = motion[Tag] as typeof motion.h1;
+  // Cast through `any` once — Tag is constrained to the union above
+  // so this resolves to the right intrinsic element at runtime.
+  const MotionTag = motion[Tag] as React.ComponentType<
+    React.ComponentProps<typeof motion.h1>
+  >;
 
   return (
     <MotionTag
