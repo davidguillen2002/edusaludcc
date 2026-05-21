@@ -4,7 +4,16 @@ import { motion } from "framer-motion";
 import { GraduationCap, HeartPulse, Scale } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
+import { SpotlightLayer } from "@/components/ui/Spotlight";
 import { values } from "@/lib/site";
+
+function trackPointer(e: React.PointerEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const r = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  el.style.setProperty("--my", `${e.clientY - r.top}px`);
+}
 
 const iconMap = {
   "heart-pulse": HeartPulse,
@@ -14,8 +23,8 @@ const iconMap = {
 
 export function Values() {
   return (
-    <section className="relative py-20 sm:py-28">
-      <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-soft opacity-70" />
+    <section className="relative isolate overflow-hidden py-20 sm:py-28">
+      <SectionBackdrop tone="warm" particles={9} seed={617} />
 
       <Container>
         <SectionHeader
@@ -30,6 +39,7 @@ export function Values() {
             return (
               <motion.article
                 key={v.title}
+                onPointerMove={trackPointer}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -38,8 +48,9 @@ export function Values() {
                   delay: i * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-elevated"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-coral-200 hover:shadow-elevated"
               >
+                <SpotlightLayer color="hsl(var(--coral-300) / 0.28)" size={380} />
                 <div
                   aria-hidden
                   className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-coral-100/60 blur-2xl transition-opacity duration-500 group-hover:opacity-100"

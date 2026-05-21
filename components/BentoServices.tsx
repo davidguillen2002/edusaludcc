@@ -13,6 +13,7 @@ import {
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { SpotlightLayer } from "@/components/ui/Spotlight";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
 import { services } from "@/lib/site";
 import { shimmer } from "@/lib/blur";
 import { cn } from "@/lib/cn";
@@ -35,7 +36,11 @@ const iconBySlug = {
 
 export function BentoServices() {
   return (
-    <section id="servicios" className="relative py-20 sm:py-28">
+    <section
+      id="servicios"
+      className="relative isolate overflow-hidden py-20 sm:py-28"
+    >
+      <SectionBackdrop tone="light" particles={10} seed={101} />
       <Container>
         <SectionHeader
           eyebrow="Nuestros servicios"

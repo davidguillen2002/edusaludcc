@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Plus } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
 import { faqs } from "@/lib/site";
 import { cn } from "@/lib/cn";
 
@@ -20,7 +21,8 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden py-20 sm:py-28">
+      <SectionBackdrop tone="cool" particles={8} seed={313} />
       <Container>
         <SectionHeader
           eyebrow="Preguntas frecuentes"

@@ -4,6 +4,8 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Button } from "@/components/ui/Button";
+import { Particles } from "@/components/ui/Particles";
+import { AnimatedRing } from "@/components/ui/AnimatedRing";
 
 export function CTABanner({
   eyebrow,
@@ -29,6 +31,7 @@ export function CTABanner({
           className="relative overflow-hidden rounded-[2rem] border border-border bg-surface px-8 py-12 shadow-soft sm:px-14 sm:py-16"
         >
           <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-soft opacity-90" />
+          <Particles count={12} seed={937} className="-z-10" />
           <div
             aria-hidden
             className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-coral-200/60 blur-3xl"

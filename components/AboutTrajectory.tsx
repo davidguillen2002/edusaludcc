@@ -7,13 +7,17 @@ import { Reveal } from "@/components/ui/Reveal";
 import { aboutImages } from "@/lib/site";
 import { shimmer } from "@/lib/blur";
 import { CountUp } from "@/components/ui/CountUp";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
+import { AnimatedRing } from "@/components/ui/AnimatedRing";
 
 export function AboutTrajectory() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="relative isolate overflow-hidden py-20 sm:py-28">
+      <SectionBackdrop tone="light" particles={9} seed={727} />
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">
+            <AnimatedRing size={108} durationS={18} thickness={3} className="z-0" />
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}

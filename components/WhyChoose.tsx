@@ -5,8 +5,17 @@ import { Layers, ShieldCheck, TrendingUp } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { CountUp } from "@/components/ui/CountUp";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
+import { SpotlightLayer } from "@/components/ui/Spotlight";
 import { whyChoose } from "@/lib/site";
 import { cn } from "@/lib/cn";
+
+function trackPointer(e: React.PointerEvent<HTMLElement>) {
+  const el = e.currentTarget;
+  const r = el.getBoundingClientRect();
+  el.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  el.style.setProperty("--my", `${e.clientY - r.top}px`);
+}
 
 const iconMap = {
   "trending-up": TrendingUp,
@@ -16,8 +25,11 @@ const iconMap = {
 
 export function WhyChoose() {
   return (
-    <section id="metodologia" className="relative py-20 sm:py-28">
-      <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-warm opacity-70" />
+    <section
+      id="metodologia"
+      className="relative isolate overflow-hidden py-20 sm:py-28"
+    >
+      <SectionBackdrop tone="warm" particles={9} seed={211} />
 
       <Container>
         <SectionHeader
@@ -32,6 +44,7 @@ export function WhyChoose() {
             return (
               <motion.article
                 key={item.title}
+                onPointerMove={trackPointer}
                 initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -41,11 +54,12 @@ export function WhyChoose() {
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className={cn(
-                  "group relative flex flex-col rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300",
+                  "group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300",
                   "hover:-translate-y-1 hover:border-brand-200 hover:shadow-elevated"
                 )}
               >
-                <div className="flex items-start justify-between">
+                <SpotlightLayer color="hsl(var(--brand-400) / 0.22)" size={420} />
+                <div className="relative flex items-start justify-between">
                   <span className="grid h-12 w-12 place-items-center rounded-2xl bg-brand-gradient text-white shadow-soft transition-transform group-hover:scale-105">
                     <Icon className="h-5 w-5" />
                   </span>

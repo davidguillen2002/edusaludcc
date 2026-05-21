@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
 import { Button } from "@/components/ui/Button";
 import { consultationTypes, siteConfig } from "@/lib/site";
 import { sendContact, type ContactResult } from "@/app/actions/contact";
@@ -69,7 +70,11 @@ export function ContactForm() {
   };
 
   return (
-    <section id="contacto" className="relative py-20 sm:py-28">
+    <section
+      id="contacto"
+      className="relative isolate overflow-hidden py-20 sm:py-28"
+    >
+      <SectionBackdrop tone="light" particles={9} seed={417} />
       <Container>
         <SectionHeader
           eyebrow="Solicita información"

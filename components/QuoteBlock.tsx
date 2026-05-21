@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { Particles } from "@/components/ui/Particles";
+import { Grain } from "@/components/ui/Grain";
 import { siteConfig } from "@/lib/site";
 
 export function QuoteBlock() {
@@ -24,6 +26,8 @@ export function QuoteBlock() {
             aria-hidden
             className="absolute -bottom-20 -left-16 h-72 w-72 rounded-full bg-brand-400/40 blur-3xl"
           />
+          <Particles count={14} seed={1049} />
+          <Grain opacity={0.07} />
 
           <Quote
             aria-hidden

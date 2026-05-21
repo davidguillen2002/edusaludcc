@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Check, Sparkles } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionBackdrop } from "@/components/ui/SectionBackdrop";
 import {
   programBullets,
   servicesPageImages,
@@ -16,7 +17,8 @@ export function ServicesShowcase() {
   return (
     <>
       {/* 1 — Programas de Educación Integral */}
-      <section className="py-16 sm:py-24">
+      <section className="relative isolate overflow-hidden py-16 sm:py-24">
+        <SectionBackdrop tone="light" particles={8} seed={811} />
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="order-2 lg:order-1">
@@ -91,8 +93,8 @@ export function ServicesShowcase() {
       </section>
 
       {/* 2 — Chequeos Médicos */}
-      <section className="relative py-16 sm:py-24">
-        <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-warm opacity-60" />
+      <section className="relative isolate overflow-hidden py-16 sm:py-24">
+        <SectionBackdrop tone="warm" particles={9} seed={823} />
         <Container>
           <div className="grid items-center gap-12 lg:grid-cols-2">
             <div className="relative">
@@ -167,7 +169,8 @@ export function ServicesShowcase() {
       </section>
 
       {/* 3 — Charlas Personalizadas + topics */}
-      <section className="py-16 sm:py-24">
+      <section className="relative isolate overflow-hidden py-16 sm:py-24">
+        <SectionBackdrop tone="cool" particles={9} seed={839} />
         <Container>
           <div className="grid items-start gap-12 lg:grid-cols-2">
             <div>
