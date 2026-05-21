@@ -1,0 +1,26 @@
+# dependencies
+node_modules
+.pnp
+.pnp.js
+
+# next
+.next
+out
+build
+
+# env — ignore every .env file except the committed example
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+*.log
+
+# python / claude code session artifacts
+__pycache__/
+*.pyc
+.claude/
+
+# types
+next-env.d.ts.bak
