@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { HeartPulse } from "lucide-react";
@@ -29,7 +29,7 @@ export function SpecialtyMarquee() {
       />
       <div
         aria-hidden
-        className="absolute -top-20 left-1/3 -z-10 h-72 w-72 rounded-full bg-coral-500/30 blur-3xl"
+        className="absolute -top-20 left-1/3 -z-10 h-72 w-72 rounded-full bg-mint-500/30 blur-3xl"
       />
       <div
         aria-hidden
@@ -79,9 +79,9 @@ function MarqueeRow({
       {doubled.map((t, i) => (
         <li
           key={`${t}-${i}`}
-          className="flex shrink-0 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-colors hover:border-coral-400/60 hover:bg-white/10"
+          className="flex shrink-0 items-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white backdrop-blur transition-colors hover:border-mint-400/60 hover:bg-white/10"
         >
-          <span className="h-1.5 w-1.5 rounded-full bg-coral-400" />
+          <span className="h-1.5 w-1.5 rounded-full bg-mint-400" />
           {t}
         </li>
       ))}

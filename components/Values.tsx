@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { GraduationCap, HeartPulse, Scale } from "lucide-react";
@@ -48,14 +48,14 @@ export function Values() {
                   delay: i * 0.08,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-coral-200 hover:shadow-elevated"
+                className="group relative overflow-hidden rounded-3xl border border-border bg-surface p-7 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:border-mint-200 hover:shadow-elevated"
               >
-                <SpotlightLayer color="hsl(var(--coral-300) / 0.28)" size={380} />
+                <SpotlightLayer color="hsl(var(--mint-300) / 0.28)" size={380} />
                 <div
                   aria-hidden
-                  className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-coral-100/60 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+                  className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-mint-100/60 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
                 />
-                <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-coral-gradient text-white shadow-soft">
+                <span className="relative grid h-12 w-12 place-items-center rounded-2xl bg-mint-gradient text-white shadow-soft">
                   <Icon className="h-5 w-5" />
                 </span>
                 <h3 className="relative mt-6 text-lg font-semibold tracking-tight text-foreground">

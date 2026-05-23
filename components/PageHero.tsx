@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Container } from "@/components/ui/Container";
@@ -34,7 +34,7 @@ export function PageHero({
       />
       <div
         aria-hidden
-        className="absolute -bottom-16 right-10 -z-10 h-56 w-56 rounded-full bg-coral-200/45 blur-3xl"
+        className="absolute -bottom-16 right-10 -z-10 h-56 w-56 rounded-full bg-mint-200/45 blur-3xl"
       />
       <div aria-hidden className="absolute inset-0 -z-10 grid-pattern opacity-25" />
       <Particles count={14} seed={1163} />
@@ -46,11 +46,11 @@ export function PageHero({
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="inline-flex items-center gap-2 rounded-full bg-coral-50/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-coral-700 backdrop-blur"
+            className="inline-flex items-center gap-2 rounded-full bg-mint-50/90 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700 backdrop-blur"
           >
             <span className="relative inline-flex h-1.5 w-1.5">
-              <span className="absolute inset-0 animate-ping rounded-full bg-coral-400/70" />
-              <span className="relative h-1.5 w-1.5 rounded-full bg-coral-500" />
+              <span className="absolute inset-0 animate-ping rounded-full bg-mint-400/70" />
+              <span className="relative h-1.5 w-1.5 rounded-full bg-mint-500" />
             </span>
             {eyebrow}
           </motion.span>

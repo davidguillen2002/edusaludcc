@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { cn } from "@/lib/cn";
 
@@ -50,7 +50,7 @@ export function AnimatedRing({
           {
             "--d": `${durationS}s`,
             background:
-              "conic-gradient(from 0deg, hsl(var(--brand-500) / 0.0), hsl(var(--brand-400) / 0.6), hsl(var(--coral-400) / 0.6), hsl(var(--brand-500) / 0.0))",
+              "conic-gradient(from 0deg, hsl(var(--brand-500) / 0.0), hsl(var(--brand-400) / 0.6), hsl(var(--mint-400) / 0.6), hsl(var(--brand-500) / 0.0))",
             mask: `radial-gradient(farthest-side, transparent calc(100% - ${thickness + 2}px), #000 calc(100% - ${thickness}px))`,
             WebkitMask: `radial-gradient(farthest-side, transparent calc(100% - ${thickness + 2}px), #000 calc(100% - ${thickness}px))`,
           } as React.CSSProperties

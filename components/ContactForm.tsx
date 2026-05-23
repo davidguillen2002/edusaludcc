@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useTransition } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -88,7 +88,7 @@ export function ContactForm() {
             <div className="relative overflow-hidden rounded-3xl bg-hero-gradient p-8 text-white shadow-elevated">
               <div
                 aria-hidden
-                className="absolute right-0 top-0 h-40 w-40 rounded-full bg-coral-500/30 blur-3xl"
+                className="absolute right-0 top-0 h-40 w-40 rounded-full bg-mint-500/30 blur-3xl"
               />
               <h3 className="text-xl font-semibold tracking-tight">
                 Hablemos de tu organización
@@ -235,7 +235,7 @@ export function ContactForm() {
                     exit={{ opacity: 0 }}
                     role="status"
                     aria-live="polite"
-                    className="mt-5 flex items-center gap-2 rounded-xl bg-leaf/10 px-4 py-3 text-sm font-medium text-leaf"
+                    className="mt-5 flex items-center gap-2 rounded-xl bg-mint-500/10 px-4 py-3 text-sm font-medium text-mint-500"
                   >
                     <Check className="h-4 w-4" />
                     Mensaje enviado. Te contactaremos pronto.
@@ -249,7 +249,7 @@ export function ContactForm() {
                     exit={{ opacity: 0 }}
                     role="alert"
                     aria-live="assertive"
-                    className="mt-5 flex items-center gap-2 rounded-xl bg-coral-50 px-4 py-3 text-sm font-medium text-coral-700"
+                    className="mt-5 flex items-center gap-2 rounded-xl bg-mint-50 px-4 py-3 text-sm font-medium text-mint-700"
                   >
                     <AlertCircle className="h-4 w-4" />
                     {errorMsg || "Hubo un error. Intenta nuevamente."}
@@ -314,7 +314,7 @@ function SubmitButton({
     <Button
       type="submit"
       disabled={pending}
-      className={cn(status === "sent" && "!bg-leaf hover:!bg-leaf")}
+      className={cn(status === "sent" && "!bg-mint-500 hover:!bg-mint-500")}
     >
       {pending ? (
         <>

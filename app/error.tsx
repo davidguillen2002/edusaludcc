@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect } from "react";
 import { RotateCcw, MessageCircle } from "lucide-react";
@@ -29,7 +29,7 @@ export default function RouteError({
       <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-soft" />
       <div
         aria-hidden
-        className="absolute -top-24 left-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-coral-200/40 blur-3xl"
+        className="absolute -top-24 left-1/2 -z-10 h-[34rem] w-[34rem] -translate-x-1/2 rounded-full bg-mint-200/40 blur-3xl"
       />
 
       <Container>
@@ -38,7 +38,7 @@ export default function RouteError({
             <BrandMark size="lg" />
           </div>
 
-          <span className="inline-flex items-center gap-2 rounded-full bg-coral-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-coral-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-mint-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700">
             Algo se rompió de nuestro lado
           </span>
 

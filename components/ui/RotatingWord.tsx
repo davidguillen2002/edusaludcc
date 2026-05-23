@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
@@ -54,7 +54,7 @@ export function RotatingWord({ words, className, intervalMs = 2400 }: Props) {
           animate={{ y: 0, opacity: 1, filter: "blur(0px)" }}
           exit={{ y: "-0.45em", opacity: 0, filter: "blur(8px)" }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="[grid-area:stack] whitespace-nowrap bg-clip-text text-transparent [background-image:linear-gradient(135deg,hsl(var(--brand-600))_0%,hsl(var(--brand-400))_50%,hsl(var(--coral-500))_100%)]"
+          className="[grid-area:stack] whitespace-nowrap bg-clip-text text-transparent [background-image:linear-gradient(135deg,hsl(var(--brand-600))_0%,hsl(var(--brand-400))_50%,hsl(var(--mint-500))_100%)]"
         >
           {words[i]}
         </motion.span>

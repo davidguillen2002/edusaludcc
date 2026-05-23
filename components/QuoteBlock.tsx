@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
@@ -20,7 +20,7 @@ export function QuoteBlock() {
         >
           <div
             aria-hidden
-            className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-coral-500/30 blur-3xl"
+            className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-mint-500/30 blur-3xl"
           />
           <div
             aria-hidden
@@ -41,7 +41,7 @@ export function QuoteBlock() {
           </blockquote>
 
           <figcaption className="relative mt-10 inline-flex items-center gap-3">
-            <span className="h-px w-10 bg-coral-300/80" />
+            <span className="h-px w-10 bg-mint-300/80" />
             <span className="text-sm font-semibold uppercase tracking-[0.18em] text-white/85">
               {siteConfig.quoteSignature.author}
             </span>

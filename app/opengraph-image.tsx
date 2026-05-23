@@ -33,7 +33,7 @@ export default async function Image() {
             width: 380,
             height: 380,
             borderRadius: 9999,
-            background: "rgba(239, 68, 68, 0.35)",
+            background: "rgba(45, 200, 138, 0.42)",
             filter: "blur(80px)",
           }}
         />
@@ -45,7 +45,7 @@ export default async function Image() {
             width: 360,
             height: 360,
             borderRadius: 9999,
-            background: "rgba(59, 130, 246, 0.45)",
+            background: "rgba(59, 130, 246, 0.5)",
             filter: "blur(80px)",
           }}
         />
@@ -71,7 +71,7 @@ export default async function Image() {
               />
               <path
                 d="M22 22 C 14 22, 10 30, 16 38 L34 56 L52 38 C 58 30, 54 22, 46 22 C 40 22, 36 26, 34 30 C 32 26, 28 22, 22 22 Z"
-                fill="#dc2626"
+                fill="#22a578"
               />
               <path
                 d="M12 40 L22 40 L26 32 L30 48 L34 36 L38 42 L46 42 L50 36 L54 44 L62 40 L70 40"
@@ -135,7 +135,7 @@ export default async function Image() {
               fontSize: 18,
               padding: "10px 18px",
               borderRadius: 9999,
-              background: "rgba(239, 68, 68, 0.92)",
+              background: "rgba(33, 171, 117, 0.95)",
               fontWeight: 600,
             }}
           >

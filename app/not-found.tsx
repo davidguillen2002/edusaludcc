@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Home, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Container } from "@/components/ui/Container";
@@ -20,7 +20,7 @@ export default function NotFound() {
             <BrandMark size="lg" />
           </div>
 
-          <span className="inline-flex items-center gap-2 rounded-full bg-coral-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-coral-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-mint-50 px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700">
             Error 404
           </span>
 

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
@@ -34,7 +34,7 @@ export function CTABanner({
           <Particles count={12} seed={937} className="-z-10" />
           <div
             aria-hidden
-            className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-coral-200/60 blur-3xl"
+            className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-mint-200/60 blur-3xl"
           />
           <div
             aria-hidden
@@ -44,7 +44,7 @@ export function CTABanner({
           <div className="relative grid items-center gap-6 sm:grid-cols-5 sm:gap-10">
             <div className="sm:col-span-3">
               {eyebrow && (
-                <span className="inline-flex items-center gap-2 rounded-full bg-coral-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-coral-700">
+                <span className="inline-flex items-center gap-2 rounded-full bg-mint-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700">
                   {eyebrow}
                 </span>
               )}

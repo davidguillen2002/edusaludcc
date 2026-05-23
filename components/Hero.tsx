@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { useRef } from "react";
@@ -105,8 +105,8 @@ export function Hero() {
         style={{ y: layerMid }}
         className="absolute inset-0 -z-10"
       >
-        <div className="absolute top-24 -left-24 h-72 w-72 rounded-full bg-coral-300/45 blur-3xl animate-float-y" />
-        <div className="absolute bottom-24 right-10 h-72 w-72 rounded-full bg-leaf/20 blur-3xl" />
+        <div className="absolute top-24 -left-24 h-72 w-72 rounded-full bg-mint-300/45 blur-3xl animate-float-y" />
+        <div className="absolute bottom-24 right-10 h-72 w-72 rounded-full bg-mint-500/20 blur-3xl" />
         <div className="absolute top-1/3 right-1/4 h-40 w-40 rounded-full bg-sun/25 blur-3xl" />
       </motion.div>
 
@@ -145,7 +145,7 @@ export function Hero() {
               initial="hidden"
               animate="show"
               custom={0}
-              className="inline-flex items-center gap-2 rounded-full border border-coral-200 bg-coral-50/90 px-3.5 py-1.5 text-xs font-semibold text-coral-700 backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-mint-200 bg-mint-50/90 px-3.5 py-1.5 text-xs font-semibold text-mint-700 backdrop-blur"
             >
               <motion.span
                 animate={{ rotate: 360 }}
@@ -302,7 +302,7 @@ export function Hero() {
                   className="absolute bottom-5 left-5 right-5 glass-strong rounded-2xl p-4 shadow-elevated"
                 >
                   <div className="flex items-center gap-3">
-                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-coral-gradient text-white animate-heartbeat">
+                    <span className="grid h-10 w-10 place-items-center rounded-xl bg-mint-gradient text-white animate-heartbeat">
                       <HeartPulse className="h-5 w-5" />
                     </span>
                     <div className="min-w-0 flex-1">
@@ -313,7 +313,7 @@ export function Hero() {
                         Plan preventivo cardiovascular
                       </div>
                     </div>
-                    <span className="rounded-full bg-leaf/15 px-2 py-1 text-[11px] font-semibold text-leaf">
+                    <span className="rounded-full bg-mint-500/15 px-2 py-1 text-[11px] font-semibold text-mint-500">
                       En curso
                     </span>
                   </div>
@@ -339,7 +339,7 @@ export function Hero() {
                   style={{ transform: "translateZ(25px)" }}
                   className="absolute left-4 top-24 glass-strong flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium shadow-soft"
                 >
-                  <Sparkles className="h-3.5 w-3.5 text-coral-500" />
+                  <Sparkles className="h-3.5 w-3.5 text-mint-500" />
                   +320 formados
                 </motion.div>
               </motion.div>
@@ -348,7 +348,7 @@ export function Hero() {
             {/* Ambient blurs */}
             <div
               aria-hidden
-              className="absolute -bottom-6 -right-4 -z-10 h-44 w-44 rounded-full bg-coral-400/45 blur-3xl"
+              className="absolute -bottom-6 -right-4 -z-10 h-44 w-44 rounded-full bg-mint-400/45 blur-3xl"
             />
             <div
               aria-hidden

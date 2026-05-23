@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useMemo } from "react";
 import { motion, useReducedMotion } from "framer-motion";
@@ -24,9 +24,9 @@ type Props = {
 
 const PALETTE = [
   "hsl(var(--brand-400) / 0.55)",
-  "hsl(var(--coral-400) / 0.55)",
+  "hsl(var(--mint-400) / 0.55)",
   "hsl(var(--brand-200) / 0.7)",
-  "hsl(var(--leaf) / 0.4)",
+  "hsl(var(--mint-500) / 0.4)",
   "hsl(var(--sun) / 0.55)",
 ];
 

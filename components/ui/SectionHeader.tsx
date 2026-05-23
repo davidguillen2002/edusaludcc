@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { Reveal } from "./Reveal";
 import { AnimatedHeadline } from "./AnimatedHeadline";
@@ -20,7 +20,7 @@ type Props = {
 /**
  * Section header — unified across every section on the site.
  *
- * - Eyebrow: pill with a pulsing coral dot
+ * - Eyebrow: pill with a pulsing mint dot
  * - Title: word-by-word reveal (AnimatedHeadline) when the prop is
  *   a string; falls back to a single Reveal when JSX is passed.
  * - Description: fades in slightly after the title for a calm cadence.
@@ -46,8 +46,8 @@ export function SectionHeader({
         <Reveal>
           <span className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
             <span className="relative inline-flex h-1.5 w-1.5">
-              <span className="absolute inset-0 animate-ping rounded-full bg-coral-400/70" />
-              <span className="relative h-1.5 w-1.5 rounded-full bg-coral-500" />
+              <span className="absolute inset-0 animate-ping rounded-full bg-mint-400/70" />
+              <span className="relative h-1.5 w-1.5 rounded-full bg-mint-500" />
             </span>
             {eyebrow}
           </span>

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -56,7 +56,7 @@ export function BentoServices() {
             className="md:col-span-3 md:row-span-2"
           />
 
-          {/* PROGRAMAS — mediana coral */}
+          {/* PROGRAMAS — mediana mint */}
           <ServiceCardAccent
             service={services[1]}
             Icon={iconBySlug.programas}
@@ -116,14 +116,14 @@ function ServiceCardLarge({
         className="object-cover transition-transform duration-[1400ms] ease-out-quint group-hover:scale-[1.06]"
       />
       <div className="absolute inset-0 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent" />
-      <SpotlightLayer color="hsl(var(--coral-300) / 0.45)" size={420} />
+      <SpotlightLayer color="hsl(var(--mint-300) / 0.45)" size={420} />
 
       <div className="relative flex h-full flex-col justify-between p-7 sm:p-9">
         <div className="flex items-center justify-between">
           <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-white/15 text-white backdrop-blur">
             <Icon className="h-5 w-5" />
           </span>
-          <span className="inline-flex items-center rounded-full bg-coral-500/90 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+          <span className="inline-flex items-center rounded-full bg-mint-500/90 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
             Más demandado
           </span>
         </div>
@@ -165,7 +165,7 @@ function ServiceCardAccent({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-coral-gradient p-7 text-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-glow-coral sm:p-8",
+        "group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-mint-gradient p-7 text-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-glow-mint sm:p-8",
         className
       )}
     >
@@ -312,7 +312,7 @@ function ServiceCardWide({
               key={t}
               className="flex items-start gap-3 rounded-2xl border border-border bg-background/70 p-4 backdrop-blur"
             >
-              <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-full bg-leaf/15 text-leaf">
+              <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-full bg-mint-500/15 text-mint-500">
                 <HeartPulse className="h-3.5 w-3.5" />
               </span>
               <span className="text-foreground/90">{t}</span>

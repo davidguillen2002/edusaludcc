@@ -42,17 +42,16 @@ const config: Config = {
           900: "hsl(var(--brand-900) / <alpha-value>)",
           DEFAULT: "hsl(var(--brand-500) / <alpha-value>)",
         },
-        coral: {
-          50: "hsl(var(--coral-50) / <alpha-value>)",
-          100: "hsl(var(--coral-100) / <alpha-value>)",
-          200: "hsl(var(--coral-200) / <alpha-value>)",
-          400: "hsl(var(--coral-400) / <alpha-value>)",
-          500: "hsl(var(--coral-500) / <alpha-value>)",
-          600: "hsl(var(--coral-600) / <alpha-value>)",
-          700: "hsl(var(--coral-700) / <alpha-value>)",
-          DEFAULT: "hsl(var(--coral-500) / <alpha-value>)",
+        mint: {
+          50: "hsl(var(--mint-50) / <alpha-value>)",
+          100: "hsl(var(--mint-100) / <alpha-value>)",
+          200: "hsl(var(--mint-200) / <alpha-value>)",
+          400: "hsl(var(--mint-400) / <alpha-value>)",
+          500: "hsl(var(--mint-500) / <alpha-value>)",
+          600: "hsl(var(--mint-600) / <alpha-value>)",
+          700: "hsl(var(--mint-700) / <alpha-value>)",
+          DEFAULT: "hsl(var(--mint-500) / <alpha-value>)",
         },
-        leaf: "hsl(var(--leaf) / <alpha-value>)",
         sun: "hsl(var(--sun) / <alpha-value>)",
         accent: {
           DEFAULT: "hsl(var(--accent) / <alpha-value>)",
@@ -71,7 +70,7 @@ const config: Config = {
         soft: "0 1px 2px hsl(var(--shadow-color) / 0.04), 0 2px 8px hsl(var(--shadow-color) / 0.06)",
         elevated: "0 8px 24px -8px hsl(var(--shadow-color) / 0.18), 0 2px 6px hsl(var(--shadow-color) / 0.06)",
         glow: "0 0 0 1px hsl(var(--brand-200) / 0.6), 0 12px 40px -10px hsl(var(--brand-500) / 0.35)",
-        "glow-coral": "0 0 0 1px hsl(var(--coral-200) / 0.6), 0 12px 40px -10px hsl(var(--coral-500) / 0.35)",
+        "glow-mint": "0 0 0 1px hsl(var(--mint-200) / 0.6), 0 12px 40px -10px hsl(var(--mint-500) / 0.35)",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "ui-sans-serif", "system-ui", "sans-serif"],
@@ -87,14 +86,14 @@ const config: Config = {
       backgroundImage: {
         "brand-gradient":
           "linear-gradient(135deg, hsl(var(--brand-600)) 0%, hsl(var(--brand-400)) 100%)",
-        "coral-gradient":
-          "linear-gradient(135deg, hsl(var(--coral-500)) 0%, hsl(var(--coral-400)) 100%)",
+        "mint-gradient":
+          "linear-gradient(135deg, hsl(var(--mint-500)) 0%, hsl(var(--mint-400)) 100%)",
         "hero-gradient":
-          "linear-gradient(135deg, hsl(var(--brand-900)) 0%, hsl(var(--brand-700)) 55%, hsl(var(--brand-600)) 100%)",
+          "linear-gradient(135deg, hsl(var(--brand-900)) 0%, hsl(var(--brand-700)) 55%, hsl(var(--mint-600)) 100%)",
         "mesh-soft":
-          "radial-gradient(at 20% 0%, hsl(var(--brand-100) / 0.6) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--coral-100) / 0.5) 0px, transparent 50%), radial-gradient(at 40% 100%, hsl(var(--brand-50) / 0.8) 0px, transparent 50%)",
+          "radial-gradient(at 20% 0%, hsl(var(--brand-100) / 0.6) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--mint-100) / 0.55) 0px, transparent 50%), radial-gradient(at 40% 100%, hsl(var(--brand-50) / 0.8) 0px, transparent 50%)",
         "mesh-warm":
-          "radial-gradient(at 0% 0%, hsl(var(--coral-100) / 0.6) 0px, transparent 50%), radial-gradient(at 100% 100%, hsl(var(--brand-100) / 0.7) 0px, transparent 50%)",
+          "radial-gradient(at 0% 0%, hsl(var(--mint-100) / 0.7) 0px, transparent 50%), radial-gradient(at 100% 100%, hsl(var(--brand-100) / 0.7) 0px, transparent 50%)",
       },
       transitionTimingFunction: {
         "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)",

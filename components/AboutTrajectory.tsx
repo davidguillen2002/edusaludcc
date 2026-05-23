@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -38,7 +38,7 @@ export function AboutTrajectory() {
             </motion.div>
             <div
               aria-hidden
-              className="absolute -bottom-6 -left-4 -z-10 h-44 w-44 rounded-full bg-coral-300/40 blur-3xl"
+              className="absolute -bottom-6 -left-4 -z-10 h-44 w-44 rounded-full bg-mint-300/40 blur-3xl"
             />
             <div
               aria-hidden
@@ -49,7 +49,7 @@ export function AboutTrajectory() {
           <div>
             <Reveal>
               <span className="inline-flex items-center gap-2 rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                <span className="h-1.5 w-1.5 rounded-full bg-coral-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-mint-500" />
                 Nuestra trayectoria
               </span>
             </Reveal>

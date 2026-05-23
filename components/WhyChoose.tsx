@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Layers, ShieldCheck, TrendingUp } from "lucide-react";
@@ -83,7 +83,7 @@ export function WhyChoose() {
 
                 <span
                   aria-hidden
-                  className="mt-6 inline-block h-1 w-12 origin-left scale-x-50 rounded-full bg-coral-gradient transition-transform duration-500 group-hover:scale-x-100"
+                  className="mt-6 inline-block h-1 w-12 origin-left scale-x-50 rounded-full bg-mint-gradient transition-transform duration-500 group-hover:scale-x-100"
                 />
               </motion.article>
             );

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { Instagram, MapPin, Mail, MessageCircle } from "lucide-react";
@@ -68,7 +68,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                 >
-                  <MessageCircle className="h-4 w-4 text-leaf" />
+                  <MessageCircle className="h-4 w-4 text-mint-500" />
                   WhatsApp
                 </a>
               </li>
@@ -79,7 +79,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
                 >
-                  <Instagram className="h-4 w-4 text-coral-500" />
+                  <Instagram className="h-4 w-4 text-mint-500" />
                   Instagram
                 </a>
               </li>

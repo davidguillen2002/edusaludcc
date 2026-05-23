@@ -1,11 +1,11 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /**
  * EduSaludCC · Design tokens
  * ------------------------------------------------------------------
- * Paleta extraída del logotipo real (azul corporativo + rojo coral).
+ * Paleta: azul corporativo (libro del logo) + mint verde claro (acento de salud preventiva).
  * Tipografía: Lexend (display, alta legibilidad) + Source Sans 3 (body).
  * Tokens HSL space-separated para soportar Tailwind <alpha-value>.
  */
@@ -21,7 +21,7 @@
     --border: 214 24% 89%;
     --ring: 217 91% 55%;
 
-    /* Brand — azul del libro */
+    /* Brand — azul corporativo del libro del logo */
     --brand-50: 210 100% 97%;
     --brand-100: 210 96% 93%;
     --brand-200: 210 95% 86%;
@@ -31,17 +31,16 @@
     --brand-700: 224 76% 36%;
     --brand-900: 226 64% 18%;
 
-    /* Coral — rojo del corazón */
-    --coral-50: 8 100% 96%;
-    --coral-100: 8 100% 92%;
-    --coral-200: 8 100% 85%;
-    --coral-400: 6 92% 64%;
-    --coral-500: 4 86% 56%;
-    --coral-600: 2 80% 48%;
-    --coral-700: 0 78% 40%;
+    /* Mint — verde claro fresco (acento principal de salud) */
+    --mint-50: 152 70% 95%;
+    --mint-100: 152 66% 88%;
+    --mint-200: 152 60% 76%;
+    --mint-400: 158 60% 50%;
+    --mint-500: 160 68% 40%;
+    --mint-600: 162 75% 32%;
+    --mint-700: 164 80% 24%;
 
-    /* Accent secundarios */
-    --leaf: 142 62% 42%;
+    /* Sun amarillo — chispa puntual (logos, sparkles) */
     --sun: 42 96% 52%;
     --accent: 174 72% 86%;
     --accent-foreground: 184 90% 20%;

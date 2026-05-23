@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion, useReducedMotion, type Variants } from "framer-motion";
 import { cn } from "@/lib/cn";
@@ -91,7 +91,7 @@ export function AnimatedHeadline({
             className={cn(
               "inline-block",
               gradient &&
-                "bg-clip-text [background-image:linear-gradient(135deg,hsl(var(--brand-700))_0%,hsl(var(--brand-500))_50%,hsl(var(--coral-500))_100%)] text-transparent"
+                "bg-clip-text [background-image:linear-gradient(135deg,hsl(var(--brand-700))_0%,hsl(var(--brand-500))_50%,hsl(var(--mint-500))_100%)] text-transparent"
             )}
           >
             {u}

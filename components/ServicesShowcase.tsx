@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import { motion } from "framer-motion";
@@ -53,7 +53,7 @@ export function ServicesShowcase() {
                     }}
                     className="flex items-start gap-3 rounded-2xl border border-border bg-surface p-4 shadow-soft"
                   >
-                    <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-full bg-leaf/15 text-leaf">
+                    <span className="mt-0.5 grid h-6 w-6 place-items-center rounded-full bg-mint-500/15 text-mint-500">
                       <Check className="h-3.5 w-3.5" />
                     </span>
                     <span className="text-sm leading-relaxed text-foreground/90">
@@ -114,13 +114,13 @@ export function ServicesShowcase() {
                   blurDataURL={shimmer(16, 12)}
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-coral-700/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-mint-700/30 via-transparent to-transparent" />
               </motion.div>
             </div>
 
             <div>
               <Reveal>
-                <span className="inline-flex items-center gap-2 rounded-full bg-coral-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-coral-700">
+                <span className="inline-flex items-center gap-2 rounded-full bg-mint-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-mint-700">
                   Servicio
                 </span>
               </Reveal>
@@ -157,7 +157,7 @@ export function ServicesShowcase() {
                       key={t}
                       className="flex items-center gap-2 rounded-xl border border-border bg-surface p-3 shadow-soft"
                     >
-                      <Check className="h-4 w-4 text-leaf" />
+                      <Check className="h-4 w-4 text-mint-500" />
                       <span className="text-foreground/90">{t}</span>
                     </div>
                   ))}
@@ -242,7 +242,7 @@ export function ServicesShowcase() {
                         }}
                         className="flex items-center gap-3 rounded-xl bg-muted/70 px-3 py-2.5 text-sm text-foreground"
                       >
-                        <span className="h-1.5 w-1.5 rounded-full bg-coral-500" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-mint-500" />
                         {t}
                       </motion.li>
                     ))}
