@@ -11,17 +11,18 @@
  */
 @layer base {
   :root {
-    /* Neutrals */
-    --background: 210 40% 99%;
+    /* Neutrals — slight warm tint in muted/border so the page doesn't
+       feel cold or clinical. Foreground stays high-contrast for AA+. */
+    --background: 36 28% 99%;
     --foreground: 222 32% 11%;
     --surface: 0 0% 100%;
-    --surface-elevated: 210 40% 99%;
-    --muted: 210 30% 96%;
-    --muted-foreground: 220 13% 38%;
-    --border: 214 24% 89%;
+    --surface-elevated: 36 28% 99%;
+    --muted: 34 26% 96%;
+    --muted-foreground: 220 12% 38%;
+    --border: 30 22% 90%;
     --ring: 217 91% 55%;
 
-    /* Brand — azul corporativo del libro del logo */
+    /* Brand — azul corporativo del libro del logo. Dominante (~30%). */
     --brand-50: 210 100% 97%;
     --brand-100: 210 96% 93%;
     --brand-200: 210 95% 86%;
@@ -31,17 +32,24 @@
     --brand-700: 224 76% 36%;
     --brand-900: 226 64% 18%;
 
-    /* Mint — verde claro fresco (acento principal de salud) */
-    --mint-50: 152 70% 95%;
-    --mint-100: 152 66% 88%;
-    --mint-200: 152 60% 76%;
-    --mint-400: 158 60% 50%;
-    --mint-500: 160 68% 40%;
-    --mint-600: 162 75% 32%;
-    --mint-700: 164 80% 24%;
+    /* Mint — verde sofisticado (no neon). Acento de salud preventiva (~10%). */
+    --mint-50: 152 50% 95%;
+    --mint-100: 152 46% 88%;
+    --mint-200: 154 42% 76%;
+    --mint-400: 158 44% 52%;
+    --mint-500: 160 52% 42%;
+    --mint-600: 162 58% 34%;
+    --mint-700: 164 64% 26%;
 
-    /* Sun amarillo — chispa puntual (logos, sparkles) */
-    --sun: 42 96% 52%;
+    /* Sand — crema cálida. Balance humano que el azul+verde solos no aportan (~5%). */
+    --sand-50: 36 60% 96%;
+    --sand-100: 35 55% 91%;
+    --sand-200: 34 50% 82%;
+    --sand-400: 30 50% 64%;
+    --sand-500: 26 50% 54%;
+    --sand-600: 22 48% 44%;
+    --sand-700: 20 45% 34%;
+
     --accent: 174 72% 86%;
     --accent-foreground: 184 90% 20%;
 

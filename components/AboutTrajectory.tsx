@@ -13,7 +13,7 @@ import { AnimatedRing } from "@/components/ui/AnimatedRing";
 export function AboutTrajectory() {
   return (
     <section className="relative isolate overflow-hidden py-20 sm:py-28">
-      <SectionBackdrop tone="light" particles={9} seed={727} />
+      <SectionBackdrop tone="sand" particles={9} seed={727} />
       <Container>
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative">

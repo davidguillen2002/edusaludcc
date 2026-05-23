@@ -165,15 +165,21 @@ function ServiceCardAccent({
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.7, delay: 0.06, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-mint-gradient p-7 text-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-glow-mint sm:p-8",
+        // Brand-blue gradient (not mint) so the bento has color variety:
+        // big photo card · blue accent card · split image · neutral wide.
+        "group relative flex flex-col justify-between overflow-hidden rounded-3xl bg-brand-gradient p-7 text-white shadow-soft transition-all hover:-translate-y-1 hover:shadow-glow sm:p-8",
         className
       )}
     >
       <div
         aria-hidden
-        className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-white/15 blur-2xl"
+        className="absolute -right-12 -top-12 h-48 w-48 rounded-full bg-mint-400/25 blur-2xl"
       />
-      <SpotlightLayer color="hsl(0 0% 100% / 0.25)" size={360} />
+      <div
+        aria-hidden
+        className="absolute -bottom-10 -left-10 h-40 w-40 rounded-full bg-sand-200/20 blur-2xl"
+      />
+      <SpotlightLayer color="hsl(var(--mint-200) / 0.35)" size={360} />
       <div className="flex items-start justify-between gap-4">
         <span className="grid h-11 w-11 place-items-center rounded-xl bg-white/20 text-white backdrop-blur">
           <Icon className="h-5 w-5" />

@@ -24,7 +24,7 @@ const iconMap = {
 export function Values() {
   return (
     <section className="relative isolate overflow-hidden py-20 sm:py-28">
-      <SectionBackdrop tone="warm" particles={9} seed={617} />
+      <SectionBackdrop tone="sand" particles={8} seed={617} />
 
       <Container>
         <SectionHeader

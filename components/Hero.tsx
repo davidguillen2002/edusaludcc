@@ -105,9 +105,10 @@ export function Hero() {
         style={{ y: layerMid }}
         className="absolute inset-0 -z-10"
       >
-        <div className="absolute top-24 -left-24 h-72 w-72 rounded-full bg-mint-300/45 blur-3xl animate-float-y" />
-        <div className="absolute bottom-24 right-10 h-72 w-72 rounded-full bg-mint-500/20 blur-3xl" />
-        <div className="absolute top-1/3 right-1/4 h-40 w-40 rounded-full bg-sun/25 blur-3xl" />
+        {/* Cool/warm balance: brand-blue + soft mint + a sand whisper. */}
+        <div className="absolute top-24 -left-24 h-72 w-72 rounded-full bg-mint-200/45 blur-3xl animate-float-y" />
+        <div className="absolute bottom-24 right-10 h-72 w-72 rounded-full bg-brand-200/55 blur-3xl" />
+        <div className="absolute top-1/3 right-1/4 h-44 w-44 rounded-full bg-sand-200/40 blur-3xl" />
       </motion.div>
 
       {/* Drawn heartbeat — fast layer */}

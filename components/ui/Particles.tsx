@@ -22,12 +22,15 @@ type Props = {
   seed?: number;
 };
 
+// 3-color palette mirroring the 60-30-10 distribution: brand
+// dominates, mint is the spark, sand softens. Opacities sit low
+// so dots register as "atmosphere" rather than "confetti".
 const PALETTE = [
-  "hsl(var(--brand-400) / 0.55)",
-  "hsl(var(--mint-400) / 0.55)",
-  "hsl(var(--brand-200) / 0.7)",
-  "hsl(var(--mint-500) / 0.4)",
-  "hsl(var(--sun) / 0.55)",
+  "hsl(var(--brand-400) / 0.45)",
+  "hsl(var(--brand-200) / 0.65)",
+  "hsl(var(--mint-400) / 0.40)",
+  "hsl(var(--sand-300, var(--sand-400)) / 0.50)",
+  "hsl(var(--sand-200) / 0.55)",
 ];
 
 /** Tiny deterministic PRNG — Mulberry32. Same seed → same particles. */
@@ -50,12 +53,14 @@ export function Particles({ count = 16, className, seed = 42 }: Props) {
     return Array.from({ length: count }, () => ({
       x: rand() * 100, // %
       y: rand() * 100,
-      size: 2 + rand() * 4,
+      // Smaller dots — atmosphere, not decoration.
+      size: 1.5 + rand() * 3,
       color: PALETTE[Math.floor(rand() * PALETTE.length)],
-      blur: rand() > 0.7 ? 2 : 0,
-      driftY: 12 + rand() * 28,
-      driftX: rand() * 18 - 9,
-      duration: 8 + rand() * 12,
+      // More dots get a blur pass → reads as depth.
+      blur: rand() > 0.55 ? 2 : 0,
+      driftY: 10 + rand() * 26,
+      driftX: rand() * 16 - 8,
+      duration: 9 + rand() * 13,
       delay: rand() * -10,
     }));
   }, [count, seed]);

@@ -15,13 +15,18 @@ import { cn } from "@/lib/cn";
  * never visibly repeat as the user scrolls.
  */
 
-type Tone = "light" | "warm" | "cool" | "none";
+type Tone = "light" | "warm" | "cool" | "sand" | "none";
 
 const mesh: Record<Tone, string> = {
+  // Default cool atmosphere — brand + whisper of mint.
   light: "bg-mesh-soft",
+  // Cream / sand warmth (community-feel sections like About, Values).
   warm: "bg-mesh-warm",
+  // Cool clinical (FAQ, contact) — brand + accent teal.
   cool:
-    "[background:radial-gradient(at_20%_0%,hsl(var(--brand-100)/0.7),transparent_50%),radial-gradient(at_85%_30%,hsl(var(--accent)/0.35),transparent_50%),radial-gradient(at_40%_100%,hsl(var(--brand-50)/0.8),transparent_55%)]",
+    "[background:radial-gradient(at_20%_0%,hsl(var(--brand-100)/0.65),transparent_50%),radial-gradient(at_85%_30%,hsl(var(--accent)/0.3),transparent_50%),radial-gradient(at_40%_100%,hsl(var(--brand-50)/0.8),transparent_55%)]",
+  // Pure sand cream — for the most "human" sections.
+  sand: "bg-mesh-sand",
   none: "",
 };
 

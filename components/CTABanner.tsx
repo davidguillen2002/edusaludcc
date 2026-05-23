@@ -32,13 +32,18 @@ export function CTABanner({
         >
           <div aria-hidden className="absolute inset-0 -z-10 bg-mesh-soft opacity-90" />
           <Particles count={12} seed={937} className="-z-10" />
+          {/* Warm + cool balance — sand cream meets brand blue. */}
           <div
             aria-hidden
-            className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-mint-200/60 blur-3xl"
+            className="absolute -right-24 -top-24 -z-10 h-72 w-72 rounded-full bg-sand-200/70 blur-3xl"
           />
           <div
             aria-hidden
-            className="absolute -bottom-24 -left-16 -z-10 h-72 w-72 rounded-full bg-brand-200/60 blur-3xl"
+            className="absolute -bottom-24 -left-16 -z-10 h-72 w-72 rounded-full bg-brand-200/55 blur-3xl"
+          />
+          <div
+            aria-hidden
+            className="absolute top-1/2 left-1/2 -z-10 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-mint-200/30 blur-3xl"
           />
 
           <div className="relative grid items-center gap-6 sm:grid-cols-5 sm:gap-10">

@@ -52,7 +52,16 @@ const config: Config = {
           700: "hsl(var(--mint-700) / <alpha-value>)",
           DEFAULT: "hsl(var(--mint-500) / <alpha-value>)",
         },
-        sun: "hsl(var(--sun) / <alpha-value>)",
+        sand: {
+          50: "hsl(var(--sand-50) / <alpha-value>)",
+          100: "hsl(var(--sand-100) / <alpha-value>)",
+          200: "hsl(var(--sand-200) / <alpha-value>)",
+          400: "hsl(var(--sand-400) / <alpha-value>)",
+          500: "hsl(var(--sand-500) / <alpha-value>)",
+          600: "hsl(var(--sand-600) / <alpha-value>)",
+          700: "hsl(var(--sand-700) / <alpha-value>)",
+          DEFAULT: "hsl(var(--sand-500) / <alpha-value>)",
+        },
         accent: {
           DEFAULT: "hsl(var(--accent) / <alpha-value>)",
           foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
@@ -88,12 +97,20 @@ const config: Config = {
           "linear-gradient(135deg, hsl(var(--brand-600)) 0%, hsl(var(--brand-400)) 100%)",
         "mint-gradient":
           "linear-gradient(135deg, hsl(var(--mint-500)) 0%, hsl(var(--mint-400)) 100%)",
+        "sand-gradient":
+          "linear-gradient(135deg, hsl(var(--sand-400)) 0%, hsl(var(--sand-200)) 100%)",
+        // Pure-blue ramp for dark surfaces; no muddy teal at the end.
         "hero-gradient":
-          "linear-gradient(135deg, hsl(var(--brand-900)) 0%, hsl(var(--brand-700)) 55%, hsl(var(--mint-600)) 100%)",
+          "linear-gradient(135deg, hsl(var(--brand-900)) 0%, hsl(var(--brand-700)) 55%, hsl(var(--brand-500)) 100%)",
+        // Cool atmospheric backdrop — brand + a whisper of mint.
         "mesh-soft":
-          "radial-gradient(at 20% 0%, hsl(var(--brand-100) / 0.6) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--mint-100) / 0.55) 0px, transparent 50%), radial-gradient(at 40% 100%, hsl(var(--brand-50) / 0.8) 0px, transparent 50%)",
+          "radial-gradient(at 20% 0%, hsl(var(--brand-100) / 0.55) 0px, transparent 50%), radial-gradient(at 80% 0%, hsl(var(--mint-100) / 0.40) 0px, transparent 50%), radial-gradient(at 40% 100%, hsl(var(--brand-50) / 0.8) 0px, transparent 50%)",
+        // Warm atmospheric backdrop — sand cream + brand.
         "mesh-warm":
-          "radial-gradient(at 0% 0%, hsl(var(--mint-100) / 0.7) 0px, transparent 50%), radial-gradient(at 100% 100%, hsl(var(--brand-100) / 0.7) 0px, transparent 50%)",
+          "radial-gradient(at 0% 0%, hsl(var(--sand-100) / 0.7) 0px, transparent 50%), radial-gradient(at 100% 100%, hsl(var(--brand-100) / 0.55) 0px, transparent 50%), radial-gradient(at 60% 50%, hsl(var(--sand-50) / 0.6) 0px, transparent 60%)",
+        // All-sand mesh for community/about sections.
+        "mesh-sand":
+          "radial-gradient(at 30% 0%, hsl(var(--sand-100) / 0.8) 0px, transparent 55%), radial-gradient(at 80% 100%, hsl(var(--sand-50)) 0px, transparent 60%)",
       },
       transitionTimingFunction: {
         "out-quint": "cubic-bezier(0.22, 1, 0.36, 1)",
