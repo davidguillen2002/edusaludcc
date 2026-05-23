@@ -26,12 +26,9 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    // All site imagery is now self-hosted from `public/img/`, so no
+    // remote patterns are required. Add entries here if a future
+    // section pulls from an external CDN.
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },

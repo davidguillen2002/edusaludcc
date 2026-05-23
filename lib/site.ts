@@ -37,35 +37,42 @@ export const navLinks = [
   { label: "Metodología", href: "/metodologia" },
 ];
 
-/** Curated Unsplash photo IDs — verified, royalty-free. */
+/**
+ * Imagery — locally served from `public/img/edusaludcc/`.
+ * Real photos of EduSaludCC programmes, talks and clinical work,
+ * sourced from the brand's own publicly published assets.
+ *
+ * Self-hosted (not Wix CDN) so the deployed site is independent of
+ * the old infrastructure and `next/image` can optimise + cache them.
+ */
 export const heroImage = {
-  src: "https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?auto=format&fit=crop&w=1600&q=80",
-  alt: "Profesional de la salud orientando a un paciente con un plan preventivo",
+  src: "/img/edusaludcc/b9835d9e.jpg",
+  alt: "Equipo de EduSaludCC impartiendo una conferencia de salud preventiva",
 };
 
 export const aboutImages = {
   trajectory: {
-    src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&w=1400&q=80",
-    alt: "Profesional de la salud en consulta personalizada",
+    src: "/img/edusaludcc/e2296a80.jpg",
+    alt: "Programa Salud Integral de EduSaludCC en una institución de Ecuador",
   },
   values: {
-    src: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1400&q=80",
-    alt: "Conversación humana entre médico y paciente",
+    src: "/img/edusaludcc/aa8df6fa.jpg",
+    alt: "Profesional de EduSaludCC en consulta personalizada con un paciente",
   },
 };
 
 export const servicesPageImages = {
   programs: {
-    src: "https://images.unsplash.com/photo-1591084728795-1149f32d9866?auto=format&fit=crop&w=1400&q=80",
-    alt: "Taller de educación en salud para una institución",
+    src: "/img/edusaludcc/3b27f229.jpg",
+    alt: "Programa institucional de salud impartido por EduSaludCC",
   },
   checkups: {
-    src: "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1400&q=80",
-    alt: "Chequeo médico preventivo a un colaborador",
+    src: "/img/edusaludcc/c82226d9.jpg",
+    alt: "Médica realizando un chequeo preventivo a un colaborador",
   },
   talks: {
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1400&q=80",
-    alt: "Charla en vivo de salud personalizada",
+    src: "/img/edusaludcc/7351c84a.jpg",
+    alt: "Charla personalizada de salud preventiva de EduSaludCC",
   },
 };
 
@@ -82,8 +89,8 @@ export const services = [
     description:
       "Espacios seguros y profesionales donde abordamos manejo del estrés, nutrición, ergonomía, prevención de enfermedades crónicas y mucho más.",
     image: {
-      src: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=1200&q=80",
-      alt: "Profesional impartiendo una charla de salud",
+      src: "/img/edusaludcc/7351c84a.jpg",
+      alt: "Charla personalizada de EduSaludCC sobre salud preventiva",
     },
   },
   {
@@ -94,8 +101,8 @@ export const services = [
     description:
       "Construimos rutas educativas completas para instituciones, con métricas claras y un informe final de aprendizaje.",
     image: {
-      src: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
-      alt: "Equipo institucional en programa de salud",
+      src: "/img/edusaludcc/db64b0ac.png",
+      alt: "Programa de salud integral de EduSaludCC en una institución ecuatoriana",
     },
   },
   {
@@ -106,8 +113,8 @@ export const services = [
     description:
       "Evaluaciones clínicas avanzadas combinadas con educación preventiva personalizada para cada colaborador.",
     image: {
-      src: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
-      alt: "Médico realizando un chequeo preventivo",
+      src: "/img/edusaludcc/aa8df6fa.jpg",
+      alt: "Médico realizando un chequeo preventivo a un colaborador",
     },
   },
   {
@@ -118,8 +125,8 @@ export const services = [
     description:
       "Workshops, hábitos y herramientas que tu equipo puede aplicar desde el lunes siguiente.",
     image: {
-      src: "https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=1200&q=80",
-      alt: "Persona caminando saludablemente al aire libre",
+      src: "/img/edusaludcc/497a574e.png",
+      alt: "Pilares de bienestar — nutrición, actividad física e higiene",
     },
   },
 ] as const;

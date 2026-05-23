@@ -107,10 +107,66 @@ gh repo create edusaludcc --public --source=. --push  # o crea el repo a mano
 
 ### 4. Dominio propio
 
-1. Compra el dominio (Namecheap, Cloudflare ~$10–15/año).
-2. Vercel → Project → **Domains** → añade `edusaludcc.com` y `www.edusaludcc.com`.
-3. Vercel te da los registros (apex A record o nameservers). Aplica en tu registrar.
-4. SSL/HTTPS se renueva solo.
+#### ¿Qué TLD usar?
+
+| Opción | Estado | Recomendación |
+|---|---|---|
+| `edusaludcc.com` | Ya lo tienes (apunta al sitio Wix actual) | ⭐ **Usar este.** Solo hay que migrar el DNS de Wix a Vercel. |
+| `edusaludcc.ec` | El TLD nacional de Ecuador. Disponibilidad en [nic.ec](https://nic.ec). | Buen complemento (~$30/año) — refuerza el SEO local en Ecuador. Lo apuntas como redirect 301 a `.com`. |
+| `edusaludcc.edu` | Restringido por EDUCAUSE a **instituciones educativas acreditadas de EE. UU.** | ❌ No aplica para una empresa privada ecuatoriana. |
+| `edusaludcc.edu.ec` | Subdominio académico de Ecuador, restringido a **universidades reconocidas por CES**. | ❌ No aplica para una empresa privada (sí para una universidad). |
+
+**Conclusión**: quédate con `edusaludcc.com`. Si quieres reforzar presencia local, agrega `edusaludcc.ec` como dominio secundario.
+
+#### Migrar `edusaludcc.com` de Wix a Vercel (sin caídas)
+
+Tu dominio sigue siendo tuyo — solo cambia a quién apunta. El sitio Wix sigue vivo hasta que tú lo bajes.
+
+**Paso 1 — Añadir el dominio a Vercel**
+1. Vercel → tu proyecto `edusaludcc` → **Settings → Domains**.
+2. Clic en **Add Domain** → escribe `edusaludcc.com` → **Add**.
+3. Repite con `www.edusaludcc.com` (Vercel los enlaza automáticamente).
+4. Vercel te mostrará los registros DNS que necesitas. Cópialos.
+
+**Paso 2 — Actualizar DNS en Wix**
+
+Vercel pedirá uno de estos dos (depende de cómo tengas el dominio):
+
+*Opción A — si el dominio está **registrado** en Wix (no solo conectado):*
+1. Wix Dashboard → **Domains → Manage** sobre `edusaludcc.com` → **Advanced** → **Edit DNS**.
+2. Cambia el registro **A** del apex `@` a `76.76.21.21` (la IP de Vercel).
+3. Cambia el **CNAME** de `www` a `cname.vercel-dns.com`.
+4. Borra los registros A/CNAME viejos que apuntaban a Wix.
+5. Guarda.
+
+*Opción B — si el dominio está **conectado** desde otro registrar (GoDaddy, Namecheap, etc.):*
+1. Entra al panel de tu registrar → DNS de `edusaludcc.com`.
+2. Aplica los mismos registros del paso A directamente ahí.
+3. Wix dejará de servir el sitio cuando los DNS apunten a Vercel.
+
+**Paso 3 — Verificar**
+- En Vercel verás un check verde en ~5–60 minutos.
+- Propagación global completa: hasta 24h.
+- SSL/HTTPS se emite automático (Let's Encrypt vía Vercel).
+- Verifica en https://dnschecker.org/#A/edusaludcc.com — debe mostrar `76.76.21.21`.
+
+**Paso 4 — Cerrar el sitio Wix (cuando confirmes que Vercel sirve bien)**
+- Wix Dashboard → desactiva la suscripción del sitio o sigue manteniéndolo como backup unos días.
+
+**Tiempo total real**: 15–60 minutos de trabajo activo, hasta 24h de propagación.
+
+#### Bonus: dominio secundario `edusaludcc.ec`
+
+1. Compra en https://nic.ec (registrar oficial de Ecuador) — ~$30/año.
+2. Vercel → Domains → Add `edusaludcc.ec` → Vercel te da DNS records.
+3. Marca el redirect: Add Domain → en el modal elige **"Redirect to edusaludcc.com"** (308 permanent).
+4. Resultado: cualquiera que teclee `edusaludcc.ec` cae en `edusaludcc.com` con SEO transferido.
+
+#### Email profesional `hola@edusaludcc.com`
+
+Una vez en Vercel:
+1. **Cloudflare Email Routing** (gratis): si Cloudflare maneja tu DNS, redirige `hola@edusaludcc.com` → tu Outlook actual.
+2. O **Resend Domains**: verificas el dominio en Resend (3 registros DNS: SPF + DKIM + DMARC) y ahora puedes enviar emails desde `hola@edusaludcc.com` (no solo `onboarding@resend.dev`).
 
 ### 5. Verificar SEO
 
