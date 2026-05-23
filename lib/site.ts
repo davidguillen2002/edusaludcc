@@ -38,41 +38,41 @@ export const navLinks = [
 ];
 
 /**
- * Imagery — locally served from `public/img/edusaludcc/`.
- * Real photos of EduSaludCC programmes, talks and clinical work,
- * sourced from the brand's own publicly published assets.
+ * Imagery — self-hosted from `public/img/edusaludcc/`.
  *
- * Self-hosted (not Wix CDN) so the deployed site is independent of
- * the old infrastructure and `next/image` can optimise + cache them.
+ * Real photos of EduSaludCC talks, programmes and educational
+ * materials in Ecuadorian institutions. Provided by the brand
+ * directly (WhatsApp media batch) and renamed to descriptive
+ * slugs so the intent at each slot is obvious from the URL.
  */
 export const heroImage = {
-  src: "/img/edusaludcc/b9835d9e.jpg",
-  alt: "Equipo de EduSaludCC impartiendo una conferencia de salud preventiva",
+  src: "/img/edusaludcc/hero-nutricion-adolescente.jpg",
+  alt: "Estudiantes ecuatorianos en una charla de EduSaludCC sobre nutrición adolescente",
 };
 
 export const aboutImages = {
   trajectory: {
-    src: "/img/edusaludcc/e2296a80.jpg",
-    alt: "Programa Salud Integral de EduSaludCC en una institución de Ecuador",
+    src: "/img/edusaludcc/about-grupo-diplomas.jpg",
+    alt: "Grupo de estudiantes recibiendo diplomas tras un programa de EduSaludCC",
   },
   values: {
-    src: "/img/edusaludcc/aa8df6fa.jpg",
-    alt: "Profesional de EduSaludCC en consulta personalizada con un paciente",
+    src: "/img/edusaludcc/values-estudiantes-presentando.jpg",
+    alt: "Estudiantes participando activamente en una charla de salud reproductiva",
   },
 };
 
 export const servicesPageImages = {
   programs: {
-    src: "/img/edusaludcc/3b27f229.jpg",
-    alt: "Programa institucional de salud impartido por EduSaludCC",
+    src: "/img/edusaludcc/programs-alimentacion-saludable.jpg",
+    alt: "Programa de alimentación saludable de EduSaludCC con materiales didácticos",
   },
   checkups: {
-    src: "/img/edusaludcc/c82226d9.jpg",
-    alt: "Médica realizando un chequeo preventivo a un colaborador",
+    src: "/img/edusaludcc/checkups-planificacion-familiar.jpg",
+    alt: "Charla de planificación familiar en una institución educativa de Ecuador",
   },
   talks: {
-    src: "/img/edusaludcc/7351c84a.jpg",
-    alt: "Charla personalizada de salud preventiva de EduSaludCC",
+    src: "/img/edusaludcc/talks-charla-presentador.jpg",
+    alt: "Profesional de EduSaludCC impartiendo una charla personalizada en aula",
   },
 };
 
@@ -89,8 +89,8 @@ export const services = [
     description:
       "Espacios seguros y profesionales donde abordamos manejo del estrés, nutrición, ergonomía, prevención de enfermedades crónicas y mucho más.",
     image: {
-      src: "/img/edusaludcc/7351c84a.jpg",
-      alt: "Charla personalizada de EduSaludCC sobre salud preventiva",
+      src: "/img/edusaludcc/bento-charlas-aula.jpg",
+      alt: "Charla de EduSaludCC en aula con estudiantes ecuatorianos",
     },
   },
   {
@@ -101,8 +101,8 @@ export const services = [
     description:
       "Construimos rutas educativas completas para instituciones, con métricas claras y un informe final de aprendizaje.",
     image: {
-      src: "/img/edusaludcc/db64b0ac.png",
-      alt: "Programa de salud integral de EduSaludCC en una institución ecuatoriana",
+      src: "/img/edusaludcc/bento-programas-materiales.jpg",
+      alt: "Materiales didácticos de un programa institucional de EduSaludCC",
     },
   },
   {
@@ -113,8 +113,8 @@ export const services = [
     description:
       "Evaluaciones clínicas avanzadas combinadas con educación preventiva personalizada para cada colaborador.",
     image: {
-      src: "/img/edusaludcc/aa8df6fa.jpg",
-      alt: "Médico realizando un chequeo preventivo a un colaborador",
+      src: "/img/edusaludcc/bento-chequeos-anatomia.jpg",
+      alt: "Charla de anatomía y fisiología impartida por EduSaludCC",
     },
   },
   {
@@ -125,8 +125,8 @@ export const services = [
     description:
       "Workshops, hábitos y herramientas que tu equipo puede aplicar desde el lunes siguiente.",
     image: {
-      src: "/img/edusaludcc/497a574e.png",
-      alt: "Pilares de bienestar — nutrición, actividad física e higiene",
+      src: "/img/edusaludcc/bento-bienestar-plato.jpg",
+      alt: "Plato pedagógico nutricional usado en talleres de EduSaludCC",
     },
   },
 ] as const;
