@@ -13,35 +13,45 @@ import { z } from "zod";
  * component — TypeScript can't enforce that, code review must.
  */
 
-/**
- * Helper: trim surrounding whitespace before further validation, and
- * collapse the empty string to `undefined` so `.optional()` works as
- * expected even when an env var is set to "" or "\n".
- *
- * Some platforms (notably the Vercel CLI receiving stdin from PowerShell)
- * append a trailing CRLF to env values; without trimming, `z.email()`
- * rejects perfectly valid addresses for the wrong reason.
- */
-const trimmed = () =>
-  z.preprocess((v) => {
-    if (typeof v !== "string") return v;
-    const t = v.trim();
-    return t.length === 0 ? undefined : t;
-  }, z.string());
-
 const serverSchema = z.object({
-  RESEND_API_KEY: trimmed().min(1).optional(),
-  CONTACT_TO_EMAIL: trimmed().email().optional(),
-  CONTACT_FROM_EMAIL: trimmed().min(1).optional(),
+  RESEND_API_KEY: z.string().min(1).optional(),
+  CONTACT_TO_EMAIL: z.string().email().optional(),
+  CONTACT_FROM_EMAIL: z.string().min(1).optional(),
   NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
 });
 
 const clientSchema = z.object({
-  NEXT_PUBLIC_SITE_URL: trimmed().url().optional(),
+  NEXT_PUBLIC_SITE_URL: z.string().url().optional(),
 });
 
-function parse<T extends z.ZodTypeAny>(schema: T, source: Record<string, string | undefined>) {
-  const parsed = schema.safeParse(source);
+/**
+ * Normalise env-var values before validation:
+ *   • trim surrounding whitespace (Vercel CLI + PowerShell stdin
+ *     piping appends a trailing CRLF that would otherwise break
+ *     `z.email()` / `z.url()` validations);
+ *   • collapse the empty string to `undefined` so `.optional()`
+ *     behaves the same whether a var is missing or blank.
+ */
+function normalise(
+  source: Record<string, string | undefined>
+): Record<string, string | undefined> {
+  const out: Record<string, string | undefined> = {};
+  for (const [key, value] of Object.entries(source)) {
+    if (typeof value !== "string") {
+      out[key] = value;
+      continue;
+    }
+    const trimmed = value.trim();
+    out[key] = trimmed.length === 0 ? undefined : trimmed;
+  }
+  return out;
+}
+
+function parse<T extends z.ZodTypeAny>(
+  schema: T,
+  source: Record<string, string | undefined>
+): z.infer<T> {
+  const parsed = schema.safeParse(normalise(source));
   if (!parsed.success) {
     const issues = parsed.error.issues
       .map((i) => `  • ${i.path.join(".")}: ${i.message}`)
