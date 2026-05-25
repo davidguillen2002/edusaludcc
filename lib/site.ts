@@ -52,8 +52,10 @@ export const heroImage = {
 
 export const aboutImages = {
   trajectory: {
-    src: "/img/edusaludcc/about-grupo-diplomas.jpg",
-    alt: "Grupo de estudiantes recibiendo diplomas tras un programa de EduSaludCC",
+    // Privacy-respectful variant — faces of underage participants are
+    // anonymised via a gaussian blur (see scripts/blur-faces.mjs).
+    src: "/img/edusaludcc/about-grupo-diplomas-private.jpg",
+    alt: "Estudiantes recibiendo diplomas tras un programa de EduSaludCC (imagen anonimizada para proteger la privacidad de menores)",
   },
   values: {
     src: "/img/edusaludcc/values-estudiantes-presentando.jpg",
@@ -67,8 +69,8 @@ export const servicesPageImages = {
     alt: "Programa de alimentación saludable de EduSaludCC con materiales didácticos",
   },
   checkups: {
-    src: "/img/edusaludcc/checkups-planificacion-familiar.jpg",
-    alt: "Charla de planificación familiar en una institución educativa de Ecuador",
+    src: "/img/edusaludcc/checkups-doctor-consulta.jpg",
+    alt: "Profesional de EduSaludCC realizando una consulta médica preventiva",
   },
   talks: {
     src: "/img/edusaludcc/talks-charla-presentador.jpg",
@@ -288,7 +290,7 @@ export const rotatingHeroWords = [
 export const faqs = [
   {
     q: "¿Cómo personalizan los programas según mi institución?",
-    a: "Comenzamos con una evaluación inicial gratuita. Mapeamos perfiles de tu equipo, riesgos prioritarios y objetivos. Sobre eso diseñamos el contenido, formato y métricas de cada intervención.",
+    a: "Comenzamos con una evaluación inicial. Mapeamos perfiles de tu equipo, riesgos prioritarios y objetivos. Sobre eso diseñamos el contenido, formato y métricas de cada intervención.",
   },
   {
     q: "¿Qué evidencia clínica respalda sus charlas y programas?",

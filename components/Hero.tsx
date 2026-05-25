@@ -311,7 +311,7 @@ export function Hero() {
                         Programa activo
                       </div>
                       <div className="truncate text-sm font-semibold text-foreground">
-                        Plan preventivo cardiovascular
+                        Programa de salud integral
                       </div>
                     </div>
                     <span className="rounded-full bg-mint-500/15 px-2 py-1 text-[11px] font-semibold text-mint-500">

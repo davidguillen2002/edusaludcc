@@ -80,7 +80,7 @@ export function AboutTrajectory() {
               <div className="mt-8 grid grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border bg-border/80 text-center shadow-soft">
                 {[
                   { v: "+5", l: "años educando" },
-                  { v: "+30", l: "instituciones aliadas" },
+                  { v: "+3", l: "instituciones aliadas" },
                   { v: "100%", l: "soluciones a medida" },
                 ].map((s) => (
                   <div key={s.l} className="bg-surface px-4 py-5">
