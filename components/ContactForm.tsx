@@ -44,12 +44,14 @@ export function ContactForm() {
   const [form, setForm] = useState<FormState>(initial);
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const [reference, setReference] = useState<string>("");
   const [pending, startTransition] = useTransition();
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("idle");
     setErrorMsg("");
+    setReference("");
     startTransition(async () => {
       const result: ContactResult = await sendContact({
         name: form.name.trim(),
@@ -61,6 +63,7 @@ export function ContactForm() {
       });
       if (result.ok) {
         setStatus("sent");
+        setReference(result.reference);
         setForm(initial);
       } else {
         setStatus("error");
@@ -235,10 +238,25 @@ export function ContactForm() {
                     exit={{ opacity: 0 }}
                     role="status"
                     aria-live="polite"
-                    className="mt-5 flex items-center gap-2 rounded-xl bg-mint-500/10 px-4 py-3 text-sm font-medium text-mint-500"
+                    className="mt-5 rounded-xl border border-mint-500/30 bg-mint-500/10 px-4 py-4 text-sm text-mint-700"
                   >
-                    <Check className="h-4 w-4" />
-                    Mensaje enviado. Te contactaremos pronto.
+                    <div className="flex items-center gap-2 font-semibold text-mint-700">
+                      <Check className="h-4 w-4" />
+                      Mensaje enviado correctamente.
+                    </div>
+                    <p className="mt-1.5 leading-relaxed text-foreground/80">
+                      Te contactaremos en menos de 24 horas laborables.
+                      {reference && (
+                        <>
+                          {" "}
+                          Tu referencia es{" "}
+                          <code className="rounded bg-mint-500/15 px-1.5 py-0.5 font-mono text-[12px] text-mint-700">
+                            {reference}
+                          </code>
+                          .
+                        </>
+                      )}
+                    </p>
                   </motion.div>
                 )}
                 {status === "error" && (
