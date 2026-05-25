@@ -6,6 +6,7 @@ import { z } from "zod";
 import { siteConfig, consultationTypes } from "@/lib/site";
 import { serverEnv } from "@/lib/env";
 import { limit, gc } from "@/lib/rate-limit";
+import { parseEcuadorPhone } from "@/lib/phone";
 
 /**
  * Production-grade contact form action.
@@ -35,7 +36,29 @@ const contactSchema = z.object({
   email: z
     .union([z.literal(""), z.string().email("Correo inválido")])
     .optional(),
-  phone: z.string().trim().min(6, "Teléfono muy corto").max(40),
+  /**
+   * Phone is parsed + normalised to the canonical Ecuadorian shape
+   * (national 0XXXXXXXXX, e164 +593XXXXXXXXX, pretty "+593 XX XXX XXXX").
+   * The user can type any of the three common ways — server output is
+   * always the same object downstream.
+   */
+  phone: z
+    .string()
+    .trim()
+    .min(1, "Ingresa tu teléfono")
+    .max(40)
+    .transform((v, ctx) => {
+      const parsed = parseEcuadorPhone(v);
+      if (!parsed) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message:
+            "Teléfono ecuatoriano inválido. Debe tener 10 dígitos (ej. 0997506117) o formato internacional +593 99 750 6117.",
+        });
+        return z.NEVER;
+      }
+      return parsed;
+    }),
   type: z.enum(consultationTypes as unknown as [string, ...string[]]),
   message: z.string().trim().min(8, "Mensaje muy corto").max(5000),
   /** Honeypot — must remain empty. Real users never see this field. */
@@ -103,9 +126,12 @@ async function sleep(ms: number) {
 /* ------------------------------------------------------------------ */
 
 function adminEmail(p: ValidatedPayload, ref: string, ip: string) {
+  const whatsappLink = `https://wa.me/${p.phone.e164.replace(/^\+/, "")}?text=${encodeURIComponent(
+    `Hola ${p.name.split(/\s+/)[0]}, te escribo desde EduSaludCC sobre tu consulta (${ref}).`
+  )}`;
   const rows: Array<[string, string]> = [
     ["Nombre", p.name],
-    ["Teléfono", p.phone],
+    ["Teléfono", p.phone.pretty],
     ["Email", p.email || "—"],
     ["Tipo de consulta", p.type],
     ["Referencia", ref],
@@ -136,13 +162,20 @@ function adminEmail(p: ValidatedPayload, ref: string, ip: string) {
       p.message
     )}</div>
   </div>
+  <div style="margin-top:22px;display:flex;gap:10px;flex-wrap:wrap">
+    <a href="${escapeHtml(whatsappLink)}" style="display:inline-block;padding:10px 16px;background:#22a578;color:#fff;text-decoration:none;border-radius:9999px;font-weight:600;font-size:14px">Responder por WhatsApp</a>
+    ${p.email ? `<a href="mailto:${escapeHtml(p.email)}?subject=${encodeURIComponent("Re: tu consulta · EduSaludCC · " + ref)}" style="display:inline-block;padding:10px 16px;background:#1d4ed8;color:#fff;text-decoration:none;border-radius:9999px;font-weight:600;font-size:14px">Responder por email</a>` : ""}
+  </div>
 </div>
 </body></html>`;
 
   const text =
     `EduSaludCC · Nueva consulta\n\n` +
     rows.map(([k, v]) => `${k}: ${v}`).join("\n") +
-    `\n\nMensaje:\n${p.message}\n\n— Enviado desde el formulario de edusaludcc.com`;
+    `\n\nMensaje:\n${p.message}\n\n` +
+    `Responder por WhatsApp: ${whatsappLink}\n` +
+    (p.email ? `Responder por email: mailto:${p.email}\n` : "") +
+    `\n— Enviado desde el formulario de edusaludcc.com`;
 
   return { html, text };
 }

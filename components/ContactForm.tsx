@@ -180,6 +180,10 @@ export function ContactForm() {
                   onChange={(v) => setForm({ ...form, phone: v })}
                   required
                   autoComplete="tel"
+                  inputMode="tel"
+                  maxLength={20}
+                  placeholder="0997506117"
+                  hint="10 dígitos · ej. 0997506117 o +593 99 750 6117"
                 />
                 <div className="flex flex-col gap-2">
                   <label
@@ -290,6 +294,10 @@ function Field({
   type = "text",
   required,
   autoComplete,
+  inputMode,
+  maxLength,
+  placeholder,
+  hint,
 }: {
   label: string;
   name: string;
@@ -298,6 +306,11 @@ function Field({
   type?: string;
   required?: boolean;
   autoComplete?: string;
+  inputMode?: "text" | "tel" | "email" | "numeric" | "search" | "url";
+  maxLength?: number;
+  placeholder?: string;
+  /** Tiny helper text below the input — useful for format hints. */
+  hint?: string;
 }) {
   return (
     <div className="flex flex-col gap-2">
@@ -315,8 +328,17 @@ function Field({
         onChange={(e) => onChange(e.target.value)}
         required={required}
         autoComplete={autoComplete}
-        className="h-11 rounded-xl border border-border bg-background px-3 text-sm text-foreground transition-colors focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-100"
+        inputMode={inputMode}
+        maxLength={maxLength}
+        placeholder={placeholder}
+        aria-describedby={hint ? `${name}-hint` : undefined}
+        className="h-11 rounded-xl border border-border bg-background px-3 text-sm text-foreground transition-colors placeholder:text-muted-foreground/50 focus:border-brand-400 focus:outline-none focus:ring-4 focus:ring-brand-100"
       />
+      {hint && (
+        <p id={`${name}-hint`} className="text-[11px] text-muted-foreground">
+          {hint}
+        </p>
+      )}
     </div>
   );
 }
